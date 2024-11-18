@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
 
-    public Rigidbody enemyRb;
+    private Rigidbody enemyRb;
     public GameObject player;
     public float speed = 3.0f; 
 
@@ -23,5 +23,10 @@ public class EnemyAI : MonoBehaviour
         Vector3 lookingDirection = (player.transform.position - transform.position).normalized;
 
         enemyRb.AddForce(lookingDirection * speed);
+
+        if (transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
