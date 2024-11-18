@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnTriggeEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Powerup"))
         {
