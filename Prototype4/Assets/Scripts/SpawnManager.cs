@@ -12,14 +12,14 @@ public class SpawnManager : MonoBehaviour
 
     public int waveNumber = 1;
 
-    void Start()
+    public void Start()
     {
         SpawnEnemyWave(waveNumber);
         SpawnPowerup(1);
     }
-   
+
     // Start is called before the first frame update
-    void SpawnEnemyWave(int enemiesToSpawn)
+    public void SpawnEnemyWave(int enemiesToSpawn)
     {
         for (int i = 0; i < enemiesToSpawn; i++)
         {
@@ -29,7 +29,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    void SpawnPowerup(int powerupsToSpawn)
+    public void SpawnPowerup(int powerupsToSpawn)
     {
         for (int i = 0; i < powerupsToSpawn; i++)
         {
@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    private Vector3 GenerateSpawnPosition()
+    public Vector3 GenerateSpawnPosition()
     {
         float spawnPosX = Random.Range(-spawnRange, spawnRange);
         float spawnPosZ = Random.Range(-spawnRange, spawnRange);
@@ -48,16 +48,5 @@ public class SpawnManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-
-        if(enemyCount == 0 )
-        {
-            waveNumber++;
-            SpawnEnemyWave(waveNumber);
-
-            SpawnPowerup(1);
-        }
-    }
+   
 }
